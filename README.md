@@ -1,53 +1,55 @@
-# 🎓 Outil d'entraînement à la certification Symfony | Efficience IT
+# 🎓 Symfony Certification Training Tool | Efficience IT
 
-Bienvenue sur notre outil d'entraînement dédié à la certification Symfony & Twig ! 🚀
+Welcome to our dedicated training tool for Symfony & Twig certification! 🚀
 
-## 🔥 Pourquoi cet outil ?
+## 🔥 Why this tool?
 
-Chez Efficience IT, nous savons que réussir la certification Symfony nécessite une maîtrise approfondie du framework et de ses concepts clés. C'est pourquoi nous avons conçu une plateforme d'entraînement sous forme de QCM (questions à choix multiples), permettant aux développeurs de tester et renforcer leurs connaissances avant l'examen officiel.
+At Efficience IT, we understand that passing the Symfony certification requires an in-depth mastery of the framework and its key concepts. That's why we’ve designed a training platform in the form of multiple-choice quizzes (MCQs), allowing developers to test and strengthen their knowledge before taking the official exam.
 
-## 🎯 Fonctionnalités principales
+## 🎯 Key Features
 
-✅ QCMs organisés par thématique : entraînez-vous sur des sujets spécifiques pour combler vos lacunes.  
-✅ Mode entraînement général : testez votre niveau avec un mélange de questions sur toutes les thématiques.  
-✅ 20 questions par catégorie : chaque grande thématique couvre plusieurs sous-thèmes pour une révision complète.
+✅ Thematic MCQs: Practice on specific topics to fill in your knowledge gaps.
 
-## 📚 Thématiques couvertes
+✅ General training mode: Test your level with a mix of questions across all themes.
 
-Notre outil reprend les principaux sujets évalués lors de la certification Symfony :
+✅ 20 questions per category: Each major topic covers multiple subtopics for a comprehensive review.
 
--   PHP & HTTP
+## 📚 Covered Topics
+
+Our tool includes the main subjects assessed in the Symfony certification:
+
+- PHP & HTTP
     
--   Symfony & Architecture
+- Symfony & Architecture
     
--   Controllers & Routing
+- Controllers & Routing
     
--   Templating avec Twig
+- Templating with Twig
     
--   Formulaires & Validation des données
+- Forms & Data Validation
     
--   Injection de dépendances
+- Dependency Injection
     
--   Sécurité & Cache HTTP
+- Security & HTTP Caching
     
--   Console Symfony
+- Symfony Console
     
--   Tests automatisés
+- Automated Testing
     
--   Divers (Miscellaneous)
+- Miscellaneous Topics
     
-## 🎯 Objectif
+## 🎯 Objective
 
-Faciliter votre montée en compétences sur Symfony et maximiser vos chances de réussite à la certification !
+Enhance your Symfony skills and maximize your chances of passing the certification!
 
-## 📌 Comment contribuer ?
+## 📌 How to contribute?
 
-Nous sommes ouverts aux contributions ! Vous pouvez proposer des améliorations, ajouter des questions ou signaler d’éventuelles corrections via des Pull Requests.
+We welcome contributions! You can suggest improvements, add questions, or report any corrections via Pull Requests.
 
 -   [Certification Symfony](https://github.com/efficience-it/certification-symfony)
     
 -   [Certification Twig](https://github.com/efficience-it/certification-twig)
     
-📩 Une question ? [Contactez-nous !](https://www.itefficience.com/contact)
+📩 Any questions? [Contactez-nous !](https://www.itefficience.com/contact)
 
-🚀 Prêt(e) à relever le défi ? Commencez dès maintenant votre entraînement et boostez vos compétences Symfony !
+🚀 Ready for the challenge? Start your training now and boost your Symfony skills!
