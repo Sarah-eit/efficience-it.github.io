@@ -2,7 +2,7 @@
 
 Welcome to our dedicated training tool for Symfony & Twig certification! 🚀
 
-[https://efficience-it.github.io](Link Here)
+[Link to the Certification App](https://efficience-it.github.io)
 
 ## 🔥 Why this tool?
 
