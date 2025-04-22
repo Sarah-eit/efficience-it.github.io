@@ -220,7 +220,7 @@ function getQueryParam(param) {
     return new URLSearchParams(window.location.search).get(param);
 }
 
-async function fetchQuestionsFromTopics(topics, questionsPerTopic = null) {
+async function fetchQuestionsFromTopics(topics, isGeneralTraining = false) {
     try {
         const allQuestionsByTopic = await Promise.all(
             topics.map(async (topic) => {
@@ -228,12 +228,13 @@ async function fetchQuestionsFromTopics(topics, questionsPerTopic = null) {
                     `https://raw.githubusercontent.com/efficience-it/certification-symfony/7.0/data/${file}`
                 );
 
-                const topicQuestions = (await Promise.all(yamlFileUrls.map(fetchYaml))).flat();
-                return { topic, questions: questionsPerTopic ? topicQuestions.sort(() => Math.random() - 0.5).slice(0, questionsPerTopic) : topicQuestions };
+                return { topic, questions: (await Promise.all(yamlFileUrls.map(fetchYaml))).flat() };
             })
         );
 
-        return allQuestionsByTopic.flatMap(({ questions }) => questions);
+        const questionsToDisplay = allQuestionsByTopic.flatMap(({ questions }) => questions);
+
+        return isGeneralTraining ? questionsToDisplay : questionsToDisplay.sort(() => Math.random() - 0.5).slice(0, 20);
     } catch (error) {
         console.error("Error loading questions :", error);
         return [];
@@ -254,7 +255,7 @@ async function fetchYamlFiles(topic) {
 
 async function fetchGeneralQuiz() {
     const allTopics = Object.keys(quizTopics);
-    const generalQuestions = await fetchQuestionsFromTopics(allTopics, 2);
+    const generalQuestions = await fetchQuestionsFromTopics(allTopics, true);
 
     if (generalQuestions.length) {
         updatePageTitles('Quiz Symfony Certification - General');
