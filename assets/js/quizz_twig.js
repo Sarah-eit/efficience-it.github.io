@@ -86,6 +86,7 @@ function generateQuestionHTML(question, index) {
             <h5 class="question-header flex justify-between items-center font-semibold text-gray-700" 
                 data-answers='${escapeHTML(JSON.stringify(answers.filter(a => a.correct).map(a => a.value)))}'>
                 <span class="question-header-title">${escapeHTML(question.question)}</span>
+                <span class="self-end text-sm text-gray-500 cursor-default" title="uuid: ${question.uuid}">ℹ️</span>
             </h5>
             <div class="question-body mt-2">
                 <div class="answers-container mt-2">${optionsHTML}</div>
