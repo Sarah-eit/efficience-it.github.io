@@ -310,14 +310,23 @@ function generateQuestionHTML(question, index) {
 
     const optionsHTML = answers.map((answer, i) => {
         const optionId = `q${index}-option${i}`;
-        const inputValue = `${question.uuid}-${i}`; // ID sûr et unique par question
+        const inputValue = `${question.uuid}-${i}`;
 
         return `
-        <div class="answer-item flex items-center space-x-2">
-            <input class="form-${inputType}" type="${inputType}" name="${questionId}" id="${optionId}" value="${inputValue}">
-            <label for="${optionId}" class="answer-label">${escapeHTML(answer.value)}</label>
-        </div>`;
+    <label for="${optionId}" class="block w-full cursor-pointer group my-0.5">
+        <div class="flex items-center space-x-3 px-3 py-1.5 rounded-md border border-gray-300 group-hover:border-blue-500 group-hover:bg-blue-50 transition">
+            <input
+                type="${inputType}"
+                name="${questionId}"
+                id="${optionId}"
+                value="${inputValue}"
+                class="accent-blue-600 w-5 h-5 shrink-0"
+            />
+            <span class="text-gray-800 group-hover:text-blue-800 text-sm">${escapeHTML(answer.value)}</span>
+        </div>
+    </label>`;
     }).join("");
+
 
 
     return `

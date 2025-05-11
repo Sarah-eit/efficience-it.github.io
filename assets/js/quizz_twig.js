@@ -1,11 +1,11 @@
 async function fetchYamlFiles(topic) {
-    if (!twigQuizTopics[topic]) {
+    if (!twig_quizz_topics[topic]) {
         displayError("Error : Unknown subject.");
         return;
     }
 
-    updatePageTitles(twigQuizTopics[topic].title);
-    const yamlFileUrls = twigQuizTopics[topic].yamlFiles.map(file => 
+    updatePageTitles(twig_quizz_topics[topic].title);
+    const yamlFileUrls = twig_quizz_topics[topic].yamlFiles.map(file =>
         `https://raw.githubusercontent.com/efficience-it/certification-twig/3.x/data/${file}`
     );
 
@@ -61,11 +61,25 @@ function generateQuestionHTML(question, index) {
     const answers = question.answers || [];
     const inputType = answers.filter(a => a.correct).length > 1 ? "checkbox" : "radio";
 
-    const optionsHTML = answers.map((answer, i) => `
-        <div class="answer-item flex items-center space-x-2">
-            <input class="form-${inputType}" type="${inputType}" name="${questionId}" id="q${index}-option${i}" value="${escapeHTML(answer.value)}">
-            <label for="q${index}-option${i}" class="answer-label">${escapeHTML(answer.value)}</label>
-        </div>`).join("");
+    const optionsHTML = answers.map((answer, i) => {
+        const optionId = `q${index}-option${i}`;
+        const inputValue = `${question.uuid}-${i}`;
+
+        return `
+    <label for="${optionId}" class="block w-full cursor-pointer group my-0.5">
+        <div class="flex items-center space-x-3 px-3 py-1.5 rounded-md border border-gray-300 group-hover:border-blue-500 group-hover:bg-blue-50 transition">
+            <input
+                type="${inputType}"
+                name="${questionId}"
+                id="${optionId}"
+                value="${inputValue}"
+                class="accent-blue-600 w-5 h-5 shrink-0"
+            />
+            <span class="text-gray-800 group-hover:text-blue-800 text-sm">${escapeHTML(answer.value)}</span>
+        </div>
+    </label>`;
+    }).join("");
+
 
     return `
         <div class="mb-4 p-4 border rounded-lg bg-gray-50">

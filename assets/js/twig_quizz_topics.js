@@ -1,4 +1,4 @@
-const twigQuizTopics = {
+const twig_quizz_topics = {
     "data": {
         title: "Quiz Twig Certification",
         yamlFiles: [
@@ -12,5 +12,5 @@ const twigQuizTopics = {
 };
 
 if (typeof window !== 'undefined') {
-    window.twigQuizTopics = twigQuizTopics;
+    window.twigQuizTopics = twig_quizz_topics;
 }
